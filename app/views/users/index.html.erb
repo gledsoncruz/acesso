@@ -1,0 +1,34 @@
+<h1>Lista de usuários</h1>
+
+
+<table border="2" style="border-collapse: collapse;" width="100%">
+  <tr>
+    <th>Nome</th>
+    <th>Login</th>
+    <th>Email</th>
+    <th>Acessos</th>
+    <th>Último acesso</th>
+	<th>Perfil</th>
+<% if can? :update, User %>
+    <th colspan="2">Ações</th>
+<% end %>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.nome %></td>
+    <td><%= user.username %></td>
+    <td><%= user.email %></td>
+    <td><%= user.sign_in_count %></td>
+    <td><%= user.last_sign_in_at %></td>
+	<td><%= user.role %></td>
+<% if can? :update, User %>
+    <td><%= link_to 'Alterar', edit_user_path(user) %></td>
+    <td><%= link_to 'Apagar', user, :confirm => 'Are you sure?', :method => :delete %></td>
+<% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'Back', root_path %>

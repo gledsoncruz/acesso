@@ -1,0 +1,20 @@
+
+<h2>Login</h2>
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <p>Usuário<br />
+  <%= f.text_field :username %></p>
+
+  <p>Senha<br />
+  <%= f.password_field :password %></p>
+
+  <% if devise_mapping.rememberable? -%>
+    <p><%= f.check_box :remember_me %> Lembrar senha (Não recomendado em computadores públicos)</p>
+  <% end -%>
+
+  <p><%= f.submit "Entrar" %></p>
+<% end %>
+
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+  <%= link_to "Esqueci minha senha?", new_password_path(resource_name) %><br />
+<% end -%>
