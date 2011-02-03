@@ -29,8 +29,8 @@ Sisauth::Application.configure do
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :user_name            => 'khaleo@gmail.com',
-    :password             => 'khaleo#2009',
+    :user_name            => 'seuemail@gmail.com',
+    :password             => 'suasenha',
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
 end
