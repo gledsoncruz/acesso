@@ -1,4 +1,4 @@
-==Passos para configuração inicial:==
+== Passos para configuração inicial: ==
 
 git clone git://github.com/gledsoncruz/acesso.git
 
@@ -25,3 +25,8 @@ Lembrando que para configurar o email corretamente é preciso alterar o arquivo:
 config/environments/development.rb
 
 linhas: 32 e 33
+
+Lembrando que as versões usadas são:
+
+Rails 3.0.3
+Ruby: 1.8.7
