@@ -1,0 +1,29 @@
+  <h2>Novo Usuário</h2>
+
+<%= form_for(@user) do |f| %>
+<div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+<div class="field">
+        Perfil<br />
+<%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
+</div><br/><br/>
+  <div class="actions">
+    <%= f.submit 'Create' %>
+  </div>
+<% end %>
+
+
+
+<%= link_to "Voltar", :back %>
+
